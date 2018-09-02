@@ -27,15 +27,14 @@ process_refs(entry_ref directoryRef, BMessage* msg, void*)
 {
 	BPath path;
 	entry_ref file_ref;
-
-	if (msg->FindRef("refs", 0, &file_ref) == B_NO_ERROR) {
+	if (msg->FindRef("refs", &file_ref) == B_NO_ERROR) {
 		BEntry(&file_ref).GetPath(&path);
 		BString command(
 			"stat=$(curl -m 2 -s -I http://google.com | grep HTTP/1 | awk {'print $2'}) ; "
 			"if [ -z  \"$stat\" ] ; then "	// network up in general?
 				"clipboard -c \"%ERROR%\" ; "
 			"else "
-				"curl -F'file=@'%FILENAME% https://0x0.st | clipboard -i ; "
+				"curl -F'file=@'\"%FILENAME%\" https://0x0.st | clipboard -i ; "
 			"fi ; "
 			"exit");
 		command.ReplaceAll("%ERROR%",
