@@ -37,11 +37,11 @@ UploadIt uses a curl command line that does all the work. You can put the line i
 
 ```
 function upload() {
-curl -F'file=@'$1 https://0x0.st | clipboard -i
+    curl -F'file=@'$1 https://0x0.st | clipboard -i
 }
 ```
 ### Manual build/install
 
 * Build with a simple "make".
-* Copy UploadIt to ```~/config/non-packaged/add-ons/Tracker.
-* For it to actually work, ou need to have the curl package installed (```pkgman install cmd:curl```)
+* Copy UploadIt to ```~/config/non-packaged/add-ons/Tracker.```
+* For it to actually work, you need to have the curl package installed (```pkgman install cmd:curl```)
