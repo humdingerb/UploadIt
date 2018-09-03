@@ -31,10 +31,11 @@ According to *The Null Pointer* website:
                                                               MiB
 ```
 
-### Tip
+### Tips
 
-UploadIt uses a curl command line that does all the work. You can put the line into your ```~/config/settings/profile``` and use "upload" from Terminal:
+* Install Clipdinger from HaikuDepot. It includes a "Clipboard Monitor" that you can embed as Replicant on the Desktop. When you see the upload URL appearing there, you know the file was uploaded successfully and the URL can be pasted.
 
+* UploadIt uses a curl command line that does all the work. You can put the line into your ```~/config/settings/profile``` and use "upload" from Terminal:
 ```
 function upload() {
     curl -F'file=@'$1 https://0x0.st | clipboard -i
