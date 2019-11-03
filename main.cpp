@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <Alert.h>
 #include <Catalog.h>
 #include <Clipboard.h>
 #include <Entry.h>
@@ -79,7 +80,10 @@ process_refs(entry_ref directoryRef, BMessage* msg, void*)
 		} else {
 			entry.GetPath(&path);
 			BString command(
-				"curl -F'file=@'\"%FILENAME%\" https://0x0.st | clipboard -i ; "
+//				0x0.st has been quite unreliable
+//				"curl -F'file=@'\"%FILENAME%\" https://0x0.st | clipboard -i ; "
+//				switching to linx.li instead (expire in one week (60*60*24*7)
+				"curl -H \"Linx-Expiry: 604800\" -T \"%FILENAME%\" https://linx.li/upload/ | clipboard -i ; "
 				"exit");
 			command.ReplaceAll("%FILENAME%", path.Path());
 			system(command.String());

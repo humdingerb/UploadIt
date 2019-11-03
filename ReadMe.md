@@ -1,35 +1,8 @@
 # UploadIt
 
-UploadIt is a Tracker Add-On that uploads a single file to the online service *The Null Pointer* at https://0x0.st . The URL for the uploaded file is put into the clipboard after the upload has finished, ready to be pasted into an email, a chat window or forum post.
+UploadIt is a Tracker Add-On that uploads a single file to the online service *Linx* at https://linx.li. The URL for the uploaded file is put into the clipboard after the upload has finished, ready to be pasted into an email, a chat window or forum post.
 
-According to *The Null Pointer* website:
-
-* Maximum file size: 512.0 MiB
-* Not allowed: application/x-dosexec, child pornography
-* File URLs are valid for at least 30 days and up to a year, depending on file size:
-```
-   days
-    365 |  \
-        |   \
-        |    \
-        |     \
-        |      \
-        |       \
-        |        ..
-        |          \
-  197.5 | ----------..-------------------------------------------
-        |             ..
-        |               \
-        |                ..
-        |                  ...
-        |                     ..
-        |                       ...
-        |                          ....
-        |                              ......
-     30 |                                    ....................
-          0                        256                        512
-                                                              MiB
-```
+Currently the expiration time for the uploaded file is hard-coded to 1 week.
 
 ### Tips
 
@@ -38,9 +11,13 @@ According to *The Null Pointer* website:
 * UploadIt uses a curl command line that does all the work. You can put the line into your ```~/config/settings/profile``` and use "upload" from Terminal:
 ```
 function upload() {
-    curl -F'file=@'$1 https://0x0.st | clipboard -i
+	curl -H "Linx-Expiry: 604800" -T "$1" https://linx.li/upload/ | clipboard -i
+	clipboard -p
 }
 ```
+
+The number for *Linx-Expiry* is the expiration time in seconds (604800 = 1 week).
+
 ### Manual build/install
 
 * Build with a simple "make".
