@@ -1,5 +1,5 @@
 /*
- * Copyright 2018. All rights reserved.
+ * Copyright 2018-2020. All rights reserved.
  * Distributed under the terms of the MIT license.
  *
  * Author:
@@ -8,7 +8,7 @@
  * Modified code from CopyNameToClipboard
  * _CheckNetworkConnection() borrowed from SoftwareUpdater
  */
- 
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -79,13 +79,15 @@ process_refs(entry_ref directoryRef, BMessage* msg, void*)
 			CopyToClipboard(text);
 		} else {
 			entry.GetPath(&path);
+			BString text(B_TRANSLATE("Uploading '%FILE%'" B_UTF8_ELLIPSIS));
+			text.ReplaceAll("%FILE%", path.Leaf());
+			CopyToClipboard(text);
+
 			BString command(
-//				0x0.st has been quite unreliable
-//				"curl -F'file=@'\"%FILENAME%\" https://0x0.st | clipboard -i ; "
-//				switching to linx.li instead (expire in one week (60*60*24*7)
-				"curl -H \"Linx-Expiry: 604800\" -T \"%FILENAME%\" https://linx.li/upload/ | clipboard -i ; "
+				"curl https://oshi.at -F f=@\"%FILEPATH%\" -F expire=20160 "
+				"| grep \"DL:\" | awk '{ print $2; }' | clipboard -i ; "
 				"exit");
-			command.ReplaceAll("%FILENAME%", path.Path());
+			command.ReplaceFirst("%FILEPATH%", path.Path());
 			system(command.String());
 		}
 	}
@@ -96,5 +98,5 @@ int
 main(int, char**)
 {
 	fprintf(stderr, B_TRANSLATE("UploadIt can only be used as a Tracker add-on.\n"));
-	return -1; 
+	return -1;
 }
