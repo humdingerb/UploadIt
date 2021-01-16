@@ -24,12 +24,13 @@ More details at [The Null Pointer](http://0x0.st/).
 * Install Clipdinger from HaikuDepot. It includes a "Clipboard Monitor" that you can embed as Replicant on the Desktop. When you see the upload URL appearing there, you know the file was uploaded successfully and the URL can be pasted.
 
 * UploadIt uses a curl command line that does all the work. You can put the line into your ```~/config/settings/profile``` and use "upload" from Terminal:
-   <pre>
+
+```
 function upload() {
 	curl -F 'file=@'"$1" http://0x0.st | clipboard -i
 	clipboard -p
 }
-</pre>
+```
 
 
 ### Manual build/install
