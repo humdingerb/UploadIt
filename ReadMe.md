@@ -1,8 +1,23 @@
-# UploadIt
+# ![UploadIt icon](./icon.png) UploadIt
 
-UploadIt is a Tracker Add-On that uploads a single file to the online service https://oshi.at. The URL for the uploaded file is put into the clipboard after the upload has finished, ready to be pasted into an email, a chat window or forum post.
+UploadIt is a Tracker Add-On that uploads a single file to the online service [The Null Pointer](http://0x0.st/). The URL for the uploaded file is put into the clipboard after the upload has finished, ready to be pasted into an email, a chat window or forum post.
 
-Uploaded files can be up to 1000 MiB in size and are stored for 14 days.
+Depending on the size of the file, uploaded files are retained for 30 days to one year. The maximum file size is 512 MiB. 0x0.st is NOT a platform for:
+
+* piracy
+* pornography
+* extremist material of any kind
+* malware / botnet C&C
+* anything related to crypto currencies
+* backups
+* CI build artifacts
+* doxxing, database dumps containing personal information
+* anything illegal under German law
+
+Uploads found to be in violation of these rules will be removed, and the originating IP address blocked from further uploads.
+
+More details at [The Null Pointer](http://0x0.st/).
+
 
 ### Tips
 
@@ -11,15 +26,14 @@ Uploaded files can be up to 1000 MiB in size and are stored for 14 days.
 * UploadIt uses a curl command line that does all the work. You can put the line into your ```~/config/settings/profile``` and use "upload" from Terminal:
    <pre>
 function upload() {
-	curl https://oshi.at -F f=@$1 -F expire=20160 | grep "DL:" | awk '{ print $2; }' | clipboard -i
+	curl -F 'file=@'"$1" http://0x0.st | clipboard -i
 	clipboard -p
 }
 </pre>
 
-   The expiration time is set in minutes, 20160 being 14 days
 
 ### Manual build/install
 
-* Build with a simple "make".
+* Build with a simple "make". To add the minimal localization, do "make bindcatalogs" after that.
 * Copy UploadIt to ```~/config/non-packaged/add-ons/Tracker/```.
 * For it to actually work, you need to have the curl package installed (```pkgman install cmd:curl```)

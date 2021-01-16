@@ -84,8 +84,7 @@ process_refs(entry_ref directoryRef, BMessage* msg, void*)
 			CopyToClipboard(text);
 
 			BString command(
-				"curl https://oshi.at -F f=@\"%FILEPATH%\" -F expire=20160 "
-				"| grep \"DL:\" | awk '{ print $2; }' | clipboard -i ; "
+				"curl -F 'file=@'\"%FILEPATH%\" http://0x0.st | clipboard -i ; "
 				"exit");
 			command.ReplaceFirst("%FILEPATH%", path.Path());
 			system(command.String());
