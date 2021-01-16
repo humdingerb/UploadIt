@@ -1,5 +1,5 @@
-1	German	application/x-vnd.humdinger-UploadIt	3369103846
+1	German	application/x-vnd.humdinger-UploadIt	1303152328
 UploadIt can only be used as a Tracker add-on.\n	Add-On		UploadIt can nur als Tracker Add-on benutzt werden.\n
 Online upload service not available	Add-On		Online Upload-Dienst nicht verfügbar
 UploadIt only works on a single file, no folders	Add-On		UploadIt verarbeitet nur eine einzelne Datei, keine Ordner
-Uploading %FILE%…	Add-On		%FILE% wird hochgeladen…
+Uploading '%FILE%'…	Add-On		'%FILE%' wird hochgeladen…

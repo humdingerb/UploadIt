@@ -1,5 +1,5 @@
-1	Turkish	application/x-vnd.humdinger-UploadIt	3369103846
+1	Turkish	application/x-vnd.humdinger-UploadIt	1303152328
 UploadIt can only be used as a Tracker add-on.\n	Add-On		UploadIt yalnızca bir İzleyici eklentisi olarak kullanılabilir.\n
 Online upload service not available	Add-On		Çevrimiçi yükleme servisi kullanılamıyor
 UploadIt only works on a single file, no folders	Add-On		UploadIt yalnızca tek bir dosya ile çalışır, klasörlerle kullanılamaz.
-Uploading %FILE%…	Add-On		%FILE% yükleniyor…
+Uploading '%FILE%'…	Add-On		'%FILE%' yükleniyor…

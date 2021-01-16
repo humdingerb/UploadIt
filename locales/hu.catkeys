@@ -1,5 +1,5 @@
-1	Hungarian	application/x-vnd.humdinger-UploadIt	3369103846
+1	Hungarian	application/x-vnd.humdinger-UploadIt	1303152328
 UploadIt can only be used as a Tracker add-on.\n	Add-On		UploadIt csak Tracker bővítményként használható.\n
 Online upload service not available	Add-On		A feltöltő szolgáltatás nem érhető el
 UploadIt only works on a single file, no folders	Add-On		UploadIt csak fájlokat képes feltölteni, könyvtárakat nem
-Uploading %FILE%…	Add-On		Uploading %FILE%…
+Uploading '%FILE%'…	Add-On		Uploading '%FILE%'…

@@ -1,5 +1,5 @@
-1	Hindi	application/x-vnd.humdinger-UploadIt	3369103846
+1	Hindi	application/x-vnd.humdinger-UploadIt	1303152328
 UploadIt can only be used as a Tracker add-on.\n	Add-On		UploadIt का उपयोग केवल Tracker add-on के रूप में किया जा सकता है\n
 Online upload service not available	Add-On		ऑनलाइन अपलोड़ सेवा उपलब्ध नहीं है
 UploadIt only works on a single file, no folders	Add-On		UploadIt केवल बिना फो़ल्डर के एक फा़इल ही अपलोड कर सकता है
-Uploading %FILE%…	Add-On		Uploading %FILE%…
+Uploading '%FILE%'…	Add-On		Uploading '%FILE%'…
