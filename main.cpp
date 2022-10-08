@@ -33,10 +33,8 @@ CheckNetworkConnection()
 	uint32 cookie = 0;
 	while (roster.GetNextInterface(&cookie, interface) == B_OK) {
 		uint32 flags = interface.Flags();
-		if ((flags & IFF_LOOPBACK) == 0
-			&& (flags & (IFF_UP | IFF_LINK)) == (IFF_UP | IFF_LINK)) {
+		if ((flags & IFF_LOOPBACK) == 0 && (flags & (IFF_UP | IFF_LINK)) == (IFF_UP | IFF_LINK))
 			return true;
-		}
 	}
 	// No network connection detected, cannot continue
 	return false;
@@ -47,13 +45,12 @@ void
 CopyToClipboard(BString text)
 {
 	ssize_t textLen = text.Length();
-	BMessage* message = (BMessage *)NULL;
+	BMessage* message = (BMessage*)NULL;
 
 	if (be_clipboard->Lock()) {
 		be_clipboard->Clear();
 		if ((message = be_clipboard->Data())) {
-			message->AddData("text/plain", B_MIME_TYPE, text.String(),
-				textLen);
+			message->AddData("text/plain", B_MIME_TYPE, text.String(), textLen);
 			be_clipboard->Commit();
 		}
 		be_clipboard->Unlock();
@@ -70,12 +67,10 @@ process_refs(entry_ref directoryRef, BMessage* msg, void*)
 	if (msg->FindRef("refs", &file_ref) == B_NO_ERROR) {
 		BEntry entry(&file_ref);
 		if (entry.IsDirectory()) {
-			BString text(B_TRANSLATE(
-				"UploadIt only works on a single file, no folders"));
+			BString text(B_TRANSLATE("UploadIt only works on a single file, no folders"));
 			CopyToClipboard(text);
 		} else if (CheckNetworkConnection() == false) {
-			BString text(B_TRANSLATE(
-				"Online upload service not available"));
+			BString text(B_TRANSLATE("Online upload service not available"));
 			CopyToClipboard(text);
 		} else {
 			entry.GetPath(&path);
