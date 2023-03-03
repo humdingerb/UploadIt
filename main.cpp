@@ -1,5 +1,5 @@
 /*
- * Copyright 2018-2020. All rights reserved.
+ * Copyright 2018-2023. All rights reserved.
  * Distributed under the terms of the MIT license.
  *
  * Author:
@@ -115,7 +115,7 @@ process_refs(entry_ref directoryRef, BMessage* msg, void*)
 			notification.SetContent(path.Leaf());
 			notification.Send(600000000);
 
-			BString command("curl -F 'file=@'\"%FILEPATH%\" http://0x0.st");
+			BString command("curl -F 'file=@'\"%FILEPATH%\" https://0x0.st");
 			if (entry.IsDirectory()) {
 				BPath parent;
 				if (path.GetParent(&parent) == B_OK) {
@@ -132,8 +132,8 @@ process_refs(entry_ref directoryRef, BMessage* msg, void*)
 
 			CopyToClipboard(output);
 
-			BString finished(B_TRANSLATE("Finished uploading " B_UTF8_ELLIPSIS));
-			notification.SetTitle(finished);
+			notification.SetTitle(B_TRANSLATE_COMMENT("Finished. URL in clipboard:",
+				"As short as possible, not much space in a Notification."));
 			notification.SetContent(output);
 			notification.Send();
 		}

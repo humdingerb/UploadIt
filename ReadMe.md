@@ -1,6 +1,6 @@
 # ![UploadIt icon](./icon.png) UploadIt
 
-UploadIt is a Tracker Add-On that uploads a single file to the online service [The Null Pointer](http://0x0.st/). The URL for the uploaded file is put into the clipboard after the upload has finished, ready to be pasted into an email, a chat window or forum post.
+UploadIt is a Tracker Add-On that uploads a single file or folder to the online service [The Null Pointer](https://0x0.st/). A folder gets automatically zipped up before uploading. The URL for the uploaded file is put into the clipboard after the upload has finished, ready to be pasted into an email, a chat window or forum post.
 
 Depending on the size of the file, uploaded files are retained for 30 days to one year. The maximum file size is 512 MiB. 0x0.st is NOT a platform for:
 
@@ -37,4 +37,4 @@ function upload() {
 
 * Build with a simple "make". To add the minimal localization, do "make bindcatalogs" after that.
 * Copy UploadIt to ```~/config/non-packaged/add-ons/Tracker/```.
-* For it to actually work, you need to have the curl package installed (```pkgman install cmd:curl```)
+* For it to actually work, you need to have the 'curl' and 'zip' package installed (```pkgman install cmd:curl cmd:zip```)
