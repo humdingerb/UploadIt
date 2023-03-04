@@ -137,7 +137,7 @@ process_refs(entry_ref directoryRef, BMessage* msg, void*)
 
 			title = B_TRANSLATE("Upload failed");
 			if (content.FindFirst("413 Request Entity Too Large") != B_ERROR) {
-				content = B_TRANSLATE("'%FILENAME%' is too large.");
+				content = B_TRANSLATE("'%FILENAME%' is too large");
 				content.ReplaceFirst("%FILENAME%", path.Leaf());
 			} else if (content.FindFirst("https://0x0.st/") == 0) {
 				title = (B_TRANSLATE_COMMENT("Finished. URL in clipboard:",
