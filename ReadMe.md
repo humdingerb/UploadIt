@@ -27,7 +27,7 @@ More details at [The Null Pointer](http://0x0.st/).
 
 ```
 function upload() {
-	curl -F 'file=@'"$1" http://0x0.st | clipboard -i
+	curl -F 'file=@'"$1" https://0x0.st | clipboard -i
 	clipboard -p
 }
 ```

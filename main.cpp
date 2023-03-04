@@ -13,18 +13,20 @@
 #include <stdlib.h>
 
 #include <Alert.h>
+#include <Application.h>
+#include <Bitmap.h>
 #include <Catalog.h>
 #include <Clipboard.h>
 #include <Entry.h>
+#include <IconUtils.h>
 #include <NetworkInterface.h>
 #include <NetworkRoster.h>
 #include <Notification.h>
 #include <Path.h>
+#include <Rect.h>
+#include <Roster.h>
 #include <String.h>
 
-#include <Bitmap.h>
-#include <IconUtils.h>
-#include <Rect.h>
 
 #undef B_TRANSLATION_CONTEXT
 #define B_TRANSLATION_CONTEXT "Add-On"
@@ -89,29 +91,32 @@ process_refs(entry_ref directoryRef, BMessage* msg, void*)
 {
 	BPath path;
 	entry_ref file_ref;
+
+	// Add time for a reasonably unique MessageID
+	bigtime_t time(real_time_clock());
+	BString msgID("UploadIt-");
+	msgID << time;
+
 	BNotification notification(B_INFORMATION_NOTIFICATION);
-	notification.SetMessageID("UploadIt");
+	notification.SetMessageID(msgID);
 	notification.SetGroup("UploadIt");
 
 	BBitmap* icon = new BBitmap(BRect(0, 0, B_LARGE_ICON - 1, B_LARGE_ICON - 1), B_RGBA32);
 	BMimeType ourself("application/x-vnd.humdinger-UploadIt");
 
-	if (ourself.GetIcon(icon, B_LARGE_ICON) == B_OK) {
+	if (ourself.GetIcon(icon, B_LARGE_ICON) == B_OK)
 		notification.SetIcon(icon);
-	}
 
 	if (msg->FindRef("refs", &file_ref) == B_NO_ERROR) {
-		BEntry entry(&file_ref);
+		BString title;
+		BString content;
 		if (CheckNetworkConnection() == false) {
-			BString text(B_TRANSLATE("Online upload service not available"));
-			CopyToClipboard(text);
-			notification.SetTitle(text);
-			notification.Send();
+			title = B_TRANSLATE("Upload failed");
+			content = B_TRANSLATE("Online service not available");
 		} else {
+			BEntry entry(&file_ref);
 			entry.GetPath(&path);
-
-			BString starting(B_TRANSLATE("Uploading " B_UTF8_ELLIPSIS));
-			notification.SetTitle(starting);
+			notification.SetTitle(B_TRANSLATE("Uploading " B_UTF8_ELLIPSIS));
 			notification.SetContent(path.Leaf());
 			notification.Send(600000000);
 
@@ -127,16 +132,22 @@ process_refs(entry_ref directoryRef, BMessage* msg, void*)
 			} else
 				command.ReplaceFirst("%FILEPATH%", path.Path());
 
-			BString output = GetStdoutFromCommand(command.String());
-			output.ReplaceLast("\n", "");
+			content = GetStdoutFromCommand(command.String());
+			content.ReplaceLast("\n", "");
 
-			CopyToClipboard(output);
-
-			notification.SetTitle(B_TRANSLATE_COMMENT("Finished. URL in clipboard:",
-				"As short as possible, not much space in a Notification."));
-			notification.SetContent(output);
-			notification.Send();
+			title = B_TRANSLATE("Upload failed");
+			if (content.FindFirst("413 Request Entity Too Large") != B_ERROR) {
+				content = B_TRANSLATE("'%FILENAME%' is too large.");
+				content.ReplaceFirst("%FILENAME%", path.Leaf());
+			} else if (content.FindFirst("https://0x0.st/") == 0) {
+				title = (B_TRANSLATE_COMMENT("Finished. URL in clipboard:",
+					"As short as possible, not much space in a Notification."));
+			}
 		}
+		notification.SetTitle(title);
+		notification.SetContent(content);
+		notification.Send();
+		CopyToClipboard(content);
 	}
 }
 
