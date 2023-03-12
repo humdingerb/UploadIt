@@ -4,8 +4,8 @@ resource app_flags B_SINGLE_LAUNCH;
 
 resource app_version {
 	major  = 1,
-	middle = 2,
-	minor  = 3,
+	middle = 3,
+	minor  = 0,
 
 	/* 0 = development	1 = alpha			2 = beta
 	   3 = gamma		4 = golden master	5 = final */
@@ -13,8 +13,8 @@ resource app_version {
 
 	internal = 0,
 
-	short_info = "Tracker add-on to upload a file",
-	long_info  = "Upload a file and put the URL into clipboard"
+	short_info = "Tracker add-on to upload a file or folder",
+	long_info  = "Upload a file/folder and put the URL into clipboard"
 };
 
 resource vector_icon {
