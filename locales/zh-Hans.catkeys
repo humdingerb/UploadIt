@@ -1,5 +1,7 @@
-1	Chinese (simplified)	application/x-vnd.humdinger-UploadIt	1303152328
-Online upload service not available	Add-On		在线上传服务不可用
-Uploading '%FILE%'…	Add-On		正在上传 '%FILE%'…
+1	Chinese (simplified)	application/x-vnd.humdinger-UploadIt	61130921
+'%FILENAME%' is too large	Add-On		'%FILENAME%' 太大了
+Finished. URL in clipboard:	Add-On	As short as possible, not much space in a Notification.	已完成。剪贴板中的URL:
+Online service not available	Add-On		在线服务不可用
+Upload failed	Add-On		上传失败
+Uploading …	Add-On		上传中 …
 UploadIt can only be used as a Tracker add-on.\n	Add-On		UploadIt 只能用作文件浏览器附加组件。\n
-UploadIt only works on a single file, no folders	Add-On		UploadIt 只对单一文件有效，非文件夹

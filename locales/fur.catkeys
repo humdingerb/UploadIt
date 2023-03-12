@@ -1,5 +1,7 @@
-1	Friulian	application/x-vnd.humdinger-UploadIt	1303152328
-Online upload service not available	Add-On		Servizi di cjariament online no disponibil
-Uploading '%FILE%'…	Add-On		Daûr a cjariâ in rêt '%FILE%'…
+1	Friulian	application/x-vnd.humdinger-UploadIt	61130921
+'%FILENAME%' is too large	Add-On		'%FILENAME%' al è masse grant
+Finished. URL in clipboard:	Add-On	As short as possible, not much space in a Notification.	Completât. URL intes notis:
+Online service not available	Add-On		Servizi online no disponibil
+Upload failed	Add-On		Cjariament in rêt falît
+Uploading …	Add-On		Daûr a cjariâ in rêt …
 UploadIt can only be used as a Tracker add-on.\n	Add-On		UploadIt al pues jessi doprât dome come component adizionâl di Tracker.\n
-UploadIt only works on a single file, no folders	Add-On		UploadIt al lavore dome cui file singui, no cun cartelis

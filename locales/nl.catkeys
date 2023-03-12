@@ -1,5 +1,7 @@
-1	Dutch	application/x-vnd.humdinger-UploadIt	1303152328
-Online upload service not available	Add-On		Online upload-dienst niet beschikbaar
-Uploading '%FILE%'…	Add-On		Uploaden '%FILE%'…
+1	Dutch	application/x-vnd.humdinger-UploadIt	61130921
+'%FILENAME%' is too large	Add-On		'%FILENAME%' is te lang
+Finished. URL in clipboard:	Add-On	As short as possible, not much space in a Notification.	Klaar. URL in klembord:
+Online service not available	Add-On		Online service niet beschikbaar
+Upload failed	Add-On		Upload gefaald
+Uploading …	Add-On		Uploaden …
 UploadIt can only be used as a Tracker add-on.\n	Add-On		UploadIt kan alleen gebruikt worden als een Tracker-add-on.\n
-UploadIt only works on a single file, no folders	Add-On		UploadIt werkt alleen met individuele bestanden, en niet met mappen

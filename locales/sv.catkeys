@@ -1,5 +1,7 @@
-1	Swedish	application/x-vnd.humdinger-UploadIt	1303152328
-Online upload service not available	Add-On		Uppladdningsservice online är inte tillgängligt
-Uploading '%FILE%'…	Add-On		Laddarupp '%FILE%'…
+1	Swedish	application/x-vnd.humdinger-UploadIt	61130921
+'%FILENAME%' is too large	Add-On		'%FILENAME%' är för stor
+Finished. URL in clipboard:	Add-On	As short as possible, not much space in a Notification.	Färdiga. URL i urklipp:
+Online service not available	Add-On		Onlinetjänst är inte tillgänglig
+Upload failed	Add-On		Uppladdningen misslyckades
+Uploading …	Add-On		Laddar upp …
 UploadIt can only be used as a Tracker add-on.\n	Add-On		UploadIt kan bara användas som ett tillägg till Tracker.\n
-UploadIt only works on a single file, no folders	Add-On		UploadIt funkar bara med enskilda filer, inte med mappar

@@ -1,5 +1,7 @@
-1	Turkish	application/x-vnd.humdinger-UploadIt	1303152328
-Online upload service not available	Add-On		Çevrimiçi yükleme servisi kullanılamıyor
-Uploading '%FILE%'…	Add-On		'%FILE%' yükleniyor…
+1	Turkish	application/x-vnd.humdinger-UploadIt	61130921
+'%FILENAME%' is too large	Add-On		'%FILENAME%' pek büyük
+Finished. URL in clipboard:	Add-On	As short as possible, not much space in a Notification.	Bitti. Panodaki URL:
+Online service not available	Add-On		Çevrimiçi hizmet kullanılamıyor
+Upload failed	Add-On		Karşıya yükleme başarısız
+Uploading …	Add-On		Karşıya yükleniyor…
 UploadIt can only be used as a Tracker add-on.\n	Add-On		UploadIt yalnızca bir İzleyici eklentisi olarak kullanılabilir.\n
-UploadIt only works on a single file, no folders	Add-On		UploadIt yalnızca tek bir dosya ile çalışır, klasörlerle kullanılamaz.

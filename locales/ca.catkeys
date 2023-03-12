@@ -1,5 +1,7 @@
-1	Catalan	application/x-vnd.humdinger-UploadIt	1303152328
-Online upload service not available	Add-On		Servei de càrrega en línia no disponible.
-Uploading '%FILE%'…	Add-On		Es carrega %FILE%…
+1	Catalan	application/x-vnd.humdinger-UploadIt	61130921
+'%FILENAME%' is too large	Add-On		El nom %FILENAME% és massa llarg.
+Finished. URL in clipboard:	Add-On	As short as possible, not much space in a Notification.	Acabat. URL al porta-retalls:
+Online service not available	Add-On		Servei en línia no disponible
+Upload failed	Add-On		Ha fallat la pujada.
+Uploading …	Add-On		Es puja...
 UploadIt can only be used as a Tracker add-on.\n	Add-On		L'UploadIt només es pot usar com a complement del rastreig.\n
-UploadIt only works on a single file, no folders	Add-On		L'UploadIt només funciona en un sol fitxer i sense carpetes.
