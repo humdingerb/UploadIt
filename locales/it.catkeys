@@ -1,5 +1,7 @@
-1	Italian	application/x-vnd.humdinger-UploadIt	1303152328
-Online upload service not available	Add-On		Servizio di upload online non disponibile
-Uploading '%FILE%'…	Add-On		Upload '%FILE%'…
+1	Italian	application/x-vnd.humdinger-UploadIt	61130921
+'%FILENAME%' is too large	Add-On		'%FILENAME%' è troppo grande
+Finished. URL in clipboard:	Add-On	As short as possible, not much space in a Notification.	Completato. URL negli appunti:
+Online service not available	Add-On		Servizio online non disponibile
+Upload failed	Add-On		Caricamento fallito
+Uploading …	Add-On		Caricamento...
 UploadIt can only be used as a Tracker add-on.\n	Add-On		UploadIt può essere utilizzato solo come componente aggiuntivo del Tracker.\n
-UploadIt only works on a single file, no folders	Add-On		UploadIt funziona unicamente con singoli file, non con cartelle

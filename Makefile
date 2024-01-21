@@ -82,7 +82,7 @@ OPTIMIZE :=
 # 	will recreate only the "locales/en.catkeys" file. Use it as a template
 # 	for creating catkeys for other languages. All localization files must be
 # 	placed in the "locales" subdirectory.
-LOCALES = ca de en_AU en_GB en es-419 fr fur nl pt sv tr zh-Hans
+LOCALES = ca de en_AU en_GB en es_419 es fr fur it nb nl pt sc sv tr zh-Hans
 
 #	Specify all the preprocessor symbols to be defined. The symbols will not
 #	have their values set automatically; you must supply the value (if any) to
