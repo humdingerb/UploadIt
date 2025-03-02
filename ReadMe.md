@@ -1,3 +1,8 @@
+* * *
+This repository is in archived, read-only mode.
+UploadIt development continues at [Codeberg](https://codeberg.org/humdinger/UploadIt).
+* * *
+
 # ![UploadIt icon](./icon.png) UploadIt
 
 UploadIt is a Tracker Add-On that uploads a single file or folder to the online service [The Null Pointer](https://0x0.st/). A folder gets automatically zipped up before uploading. The URL for the uploaded file is put into the clipboard after the upload has finished, ready to be pasted into an email, a chat window or forum post.
